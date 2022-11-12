@@ -1,0 +1,49 @@
+/* reset box-sizing */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+#layout-container {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    
+    background-color: red;
+}
+
+#sidebar-container {
+    background-color: green;
+}
+
+#main-content-container {
+    background-color: blue;
+}
+
+/* SIDE BAR */
+/* logo & title */
+#logo-and-title {
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    align-items: center;
+
+    padding-left: 2rem;
+
+    color: white;
+}
+
+#logo-and-title > img {
+    width: 4rem;
+    height: 4rem;
+}
