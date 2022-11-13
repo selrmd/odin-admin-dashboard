@@ -168,6 +168,14 @@ body {
     align-self: end;
 }
 
+/* show ellipses when text overflow */
+.project-card > p {
+    display: -webkit-inline-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+
 /* project card icons */
 .project-card > div:last-of-type {
     display: grid;
