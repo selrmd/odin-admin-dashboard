@@ -121,3 +121,24 @@ body {
 #profile-section-container > div:last-of-type > div:last-of-type > button {
     height: 2rem;
 }
+
+/* MAIN SECTION */
+#main-section {
+    background-color: pink;
+
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+}
+
+#projects-section > div {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    background-color: aqua;
+}
+
+#branding-section {
+    background-color: blueviolet;
+}
