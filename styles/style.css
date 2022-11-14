@@ -186,3 +186,40 @@ body {
     justify-content: end;
     align-items: center;
 }
+
+/* ANNOUNCEMENTS */
+#announcement-card {
+    background-color: white;
+
+    display: grid;
+    grid-template-rows: repeat(3, content-fit);
+
+    margin: 2rem;
+    padding: 2rem;
+
+    border-radius: 0.8rem;
+}
+
+#announcement-card h3 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0.5rem;
+}
+
+#announcement-card > div:first-child,
+#announcement-card > div:nth-child(2) {
+    border-bottom: 1px solid black;
+}
+
+#announcement-card > :not(div:nth-of-type(1)) > h3{
+    padding-top: 1rem;
+}
+
+#announcement-card p {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+#announcement-card > div:last-of-type > p {
+    margin-bottom: 0;
+}
