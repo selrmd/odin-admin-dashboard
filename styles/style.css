@@ -223,3 +223,31 @@ body {
 #announcement-card > div:last-of-type > p {
     margin-bottom: 0;
 }
+
+/* TRENDING */
+#trending-card {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    margin: 2rem;
+    padding: 1rem 1.5rem;
+    row-gap: 1rem;
+    border-radius: 0.8rem;
+    background-color: white;
+}
+
+#trending-card > div {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+
+    align-items: center;
+}
+
+#trending-card > div p {
+    margin: 0;
+    margin-left: 0.4rem;
+}
+
+#trending-card > div p:first-of-type {
+    margin-bottom: 0.4rem;
+}
