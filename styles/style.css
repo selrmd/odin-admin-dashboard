@@ -1,4 +1,4 @@
-/* reset box-sizing */
+/* reset & use box-sizing */
 :root {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
@@ -9,7 +9,6 @@
     --txt-dark-grey: #404040;
     --txt-light-grey: #737373;
     --yellow: #f0b429;
-
 }
 
 *, *:before, *:after {
@@ -17,12 +16,11 @@
 }
 
 body {
-    box-sizing: border-box;
-
     margin: 0;
     padding: 0;
 }
 
+/* WEBPAGE LAYOUT */
 #layout-container {
     height: 100vh;
 
@@ -31,11 +29,13 @@ body {
 }
 
 #sidebar-container {
-    background-color: var(--blue);
     display: grid;
-
     grid-template-rows: auto auto 1fr;
-    row-gap: 2rem;
+    row-gap: 3rem;
+
+    padding-left: 2rem;
+
+    background-color: var(--blue);
 }
 
 /* SIDE BAR */
@@ -43,10 +43,10 @@ body {
 #logo-and-title {
     display: grid;
     grid-template-columns: 1fr 3.5fr;
-    align-items: center;
 
+    align-items: center;
     column-gap: 0.8rem;
-    padding-left: 2rem;
+
     padding-top: 1rem;
 
     color: white;
@@ -55,6 +55,8 @@ body {
 #logo-and-title > h1 {
     font-size: 2rem;
     margin: 0;
+
+    /* avoid squishing when user zooms in */
     padding-right: 2rem;
 }
 
@@ -64,13 +66,8 @@ body {
 }
 
 /* sidebar */
-#navigation-container,
-#settings-container {
-    padding-left: 2rem;
-}
-
 #navigation-container > ul > li,
-#settings-container > ul > li{
+#settings-container > ul > li {
     display: grid;
     grid-template-columns: 1.6rem 1fr;
 
@@ -106,10 +103,7 @@ body {
 }
 
 #profile-section-container {
-    display: grid;
-
     background-color: white;
-
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -124,17 +118,18 @@ body {
 /* SEARCH SECTION */
 #profile-section-container > div:first-of-type > div:first-child {
     display: grid;
-    grid-template-columns: 2rem 1fr;
-    gap: 1.2rem;
+    grid-template-columns: 2rem 0.9fr;
 
-    padding-left: 4rem;
+    gap: 1.2rem;
     align-content: center;
+
+    /* avoid squishing when user zooms in */
+    padding-left: 4rem;
 }
 
 /* search field */
 #profile-section-container > div:first-of-type > div:first-child > input {
     height: 2.2rem;
-    margin-right: 0.5rem;
 
     border-style: hidden;
     background-color: var(--bg-grey);
@@ -144,15 +139,11 @@ body {
 /* PROFILE SECTION */
 #profile-section-container > div:first-of-type > div:last-child {
     display: grid;
-    /* 2rem to automatically resize the notification */
-    /* 5rem to automatically resize profile pic */
+    /* 2rem to automatically resize the notification icon */
+    /* 4rem to automatically resize profile pic */
     grid-template-columns: 2rem 4rem auto;
 
     gap: 1rem;
-
-    /* in case user zooms in */
-    /* won't squish with search field */
-    margin-left: 0.5rem;
 
     /* align it with links */
     padding-right: 8rem;
@@ -165,7 +156,7 @@ body {
 }
 
 #profile-section-container > div:first-of-type > div:last-child > p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
@@ -180,6 +171,7 @@ body {
 /* GREETING */
 #profile-section-container > div:last-of-type > div:first-of-type {
     display: grid;
+    /* 4.8rem is the size of profile pic */
     grid-template-columns: 4.8rem 1fr;
     gap: 1rem;
 
@@ -189,31 +181,34 @@ body {
 
 /* select the greeting */
 #profile-section-container > div:last-of-type > div:first-of-type p:first-of-type {
-    font-weight: 700;
     margin: 0;
     margin-bottom: 0.4rem;
+
+    font-weight: 700;
 }
 
 /* select user name & handle */
 #profile-section-container > div:last-of-type > div:first-of-type p:last-of-type {
-    font-weight: 700;
     font-size: 1.5rem;
     margin: 0;
+
+    font-weight: 700;
 }
 
 /* LINKS */
 #profile-section-container > div:last-of-type > div:last-of-type {
     display: grid;
+    /* 7rem sets the width of buttons */
     grid-template-columns: repeat(3, 7rem);
     gap: 1.2rem;
 
-    padding-right: 7rem;
     align-items: center;
     justify-content: end;
+
+    padding-right: 7rem;
 }
 
 #profile-section-container > div:last-of-type > div:last-of-type > button {
-    width: 7rem;
     height: 2.5rem;
 
     border-style: none;
@@ -234,7 +229,6 @@ body {
 #profile-section-container > div:last-of-type > div:last-of-type > button:active {
     background-color: var(--yellow);
     color: white;
-    cursor: pointer;
 }
 
 /* MAIN SECTION */
@@ -259,59 +253,59 @@ body {
     padding: 0;
 
     font-weight: 700;
+    color: var(--txt-dark-grey);
 }
 
 #projects-section > div {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
     row-gap: 1.6rem;
-    padding-right: 2rem;
+    column-gap: 2rem;
 
     justify-items: center;
+    
+    padding-right: 2rem;
 }
 
 /* project card */
 .project-card {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    background-color: white;
-
-    padding: 1.5rem 2rem 1.5rem 2rem;
+    
+    padding: 1.5rem 2rem;
     
     border-left: 0.5rem solid var(--yellow);
     border-radius: 0.5rem;
+
+    background-color: white;
 }
 
-.project-card > h3 {
-    align-self: end;
-}
-
-/* show ellipses when text overflow */
+/* project card text */
 .project-card > p {
+    /* height of a paragraph with
+       4 lines max to get equal cards */
     height: 4.75rem;
 
+    /* show ellipses when text overflow */
     display: -webkit-inline-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
+
+    color: var(--txt-light-grey);
 }
 
 /* project card icons */
 .project-card > div:last-of-type {
     display: grid;
 
+    /* 1.7rem is the size of icons */
     grid-template-columns: repeat(3, 1.7rem);
     column-gap: 0.5rem;
 
     justify-content: end;
     align-items: center;
-}
-
-/* project card text */
-.project-card > p {
-    color: var(--txt-light-grey);
 }
 
 /* ANNOUNCEMENTS */
@@ -333,11 +327,6 @@ body {
     font-size: 1rem;
 }
 
-#announcement-card > div:first-child,
-#announcement-card > div:nth-child(2) {
-    border-bottom: 1px solid var(--bg-grey);
-}
-
 #announcement-card > :not(div:nth-of-type(1)) > h3{
     padding-top: 1rem;
 }
@@ -353,19 +342,28 @@ body {
     margin-bottom: 0;
 }
 
+/* separation bar */
+#announcement-card > div:first-child,
+#announcement-card > div:nth-child(2) {
+    border-bottom: 1px solid var(--bg-grey);
+}
+
 /* TRENDING */
 #trending-card {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
+    row-gap: 1rem;
 
     padding: 1rem 1.5rem;
-    row-gap: 1rem;
+
     border-radius: 0.8rem;
     background-color: white;
 }
 
 #trending-card > div {
     display: grid;
+    /* 3.5rem is the size of
+       avatar icon */
     grid-template-columns: 3.5rem 1fr;
 
     align-items: center;
@@ -386,6 +384,12 @@ body {
 }
 
 #announcement-card > div > p,
-#trending-card > div > div > p:last-of-type {
+#trending-card p:last-of-type {
     color: var(--txt-light-grey);
+}
+
+.project-card,
+#announcement-card,
+#trending-card {
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.1);
 }
