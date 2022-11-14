@@ -18,11 +18,15 @@ body {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 4.5fr;
 }
 
 #sidebar-container {
     background-color: green;
+    display: grid;
+
+    grid-template-rows: auto auto 1fr;
+    row-gap: 2rem;
 }
 
 /* SIDE BAR */
@@ -33,6 +37,7 @@ body {
     align-items: center;
 
     padding-left: 2rem;
+    padding-top: 1rem;
 
     color: white;
 }
@@ -40,6 +45,33 @@ body {
 #logo-and-title > img {
     width: 4rem;
     height: 4rem;
+}
+
+/* sidebar */
+#navigation-container,
+#settings-container {
+    padding-left: 2rem;
+}
+
+#navigation-container > ul > li,
+#settings-container > ul > li{
+    display: grid;
+    grid-template-columns: 1.6rem 1fr;
+
+    column-gap: 1rem;
+    padding-bottom: 1rem;
+
+    align-items: center;
+    list-style-type: none;
+}
+
+#sidebar-container ul {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar-container a {
+    text-decoration: none;
 }
 
 /* MAIN PAGE */
