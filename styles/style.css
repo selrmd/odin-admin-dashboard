@@ -1,6 +1,14 @@
 /* reset box-sizing */
-html {
+:root {
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+
+    --blue: #1992d4;
+    --bg-grey: #e2e8f0;
+    --txt-dark-grey: #404040;
+    --txt-light-grey: #737373;
+    --yellow: #f0b429;
+
 }
 
 *, *:before, *:after {
@@ -22,7 +30,7 @@ body {
 }
 
 #sidebar-container {
-    background-color: green;
+    background-color: var(--blue);
     display: grid;
 
     grid-template-rows: auto auto 1fr;
@@ -36,10 +44,17 @@ body {
     grid-template-columns: 1fr 3.5fr;
     align-items: center;
 
+    column-gap: 0.8rem;
     padding-left: 2rem;
     padding-top: 1rem;
 
     color: white;
+}
+
+#logo-and-title > h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding-right: 2rem;
 }
 
 #logo-and-title > img {
@@ -58,8 +73,8 @@ body {
     display: grid;
     grid-template-columns: 1.6rem 1fr;
 
-    column-gap: 1rem;
-    padding-bottom: 1rem;
+    column-gap: 1.5rem;
+    padding-bottom: 1.2rem;
 
     align-items: center;
     list-style-type: none;
@@ -74,6 +89,13 @@ body {
     text-decoration: none;
 }
 
+#sidebar-container a:visited,
+#sidebar-container a:link {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
 /* MAIN PAGE */
 #main-content-container {
     display: grid;
@@ -82,7 +104,7 @@ body {
 
 #profile-section-container {
     display: grid;
-    background-color: gray;
+    background-color: white;
 }
 
 /* SEARCH & PROFILE */
@@ -156,7 +178,7 @@ body {
 
 /* MAIN SECTION */
 #main-section {
-    background-color: pink;
+    background-color: var(--bg-grey);
 
     display: grid;
     grid-template-columns: 2.5fr 1fr;
@@ -174,10 +196,6 @@ body {
     justify-items: center;
 }
 
-#branding-section {
-    background-color: blueviolet;
-}
-
 /* project card */
 .project-card {
     height: 14rem;
@@ -189,7 +207,7 @@ body {
     padding: 2rem;
     padding-top: 0;
 
-    border-left: 0.5rem solid red;
+    border-left: 0.5rem solid var(--yellow);
     border-radius: 0.5rem;
 }
 
@@ -219,6 +237,11 @@ body {
     align-items: center;
 }
 
+/* project card text */
+.project-card > p {
+    color: var(--txt-light-grey);
+}
+
 /* ANNOUNCEMENTS */
 #announcement-card {
     background-color: white;
@@ -240,7 +263,7 @@ body {
 
 #announcement-card > div:first-child,
 #announcement-card > div:nth-child(2) {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--bg-grey);
 }
 
 #announcement-card > :not(div:nth-of-type(1)) > h3{
@@ -282,4 +305,9 @@ body {
 
 #trending-card > div p:first-of-type {
     margin-bottom: 0.4rem;
+}
+
+#announcement-card > div > p,
+#trending-card > div > div > p:last-of-type {
+    color: var(--txt-light-grey);
 }
